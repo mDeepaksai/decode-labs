@@ -318,6 +318,12 @@ footer {
     color: rgba(242, 240, 234, 0.5);
 }
 
+/* TABLET */
+@media (min-width: 768px) {
+    .main-grid {
+        align-items: center;
+    }
+}
 /* DESKTOP 1024px */
 @media (min-width: 1024px) {
     .hambuger {
