@@ -31,38 +31,47 @@
         </div>
     </nav>
     <div class="main">
-        <div class="signin-container">
-            <div class="signin-header">
-                <h1 class="head">Welcome back</h1>
-                <p class="para">Sign in to your StackFind account</p>
+        <div class="main-grid">
+            <div class="main-left">
+                <h2>StackFind</h2>
+                <p>Discover the best SaaS tools for your workflow</p>
+                <p>Find, compare and choose the right software for you</p>
             </div>
-            <div class="social-signin">
-                <button href="#" class="signin-btn1"><i class="fa-brands fa-google"></i>Continue with Google</button>
-                <button href="#" class="signin-btn1"><i class="fa-brands fa-github"></i>Continue with GitHub</button>
-                <p class="or">or CONTINUE WITH EMAIL</p>
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <div class="input-wrap">
-                    <i class="fa-solid fa-envelope"></i>
-                    <input type="email" placeholder="you@example.com" id="email">
+            <div class="signin-container">
+                <div class="signin-header">
+                    <h1 class="head">Welcome back</h1>
+                    <p class="para">Sign in to your StackFind account</p>
                 </div>
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <div class="input-wrap">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="••••••••" id="password">
+                <div class="social-signin">
+                    <button href="#" class="signin-btn1"><i class="fa-brands fa-google"></i>Continue with
+                        Google</button>
+                    <button href="#" class="signin-btn1"><i class="fa-brands fa-github"></i>Continue with
+                        GitHub</button>
+                    <p class="or">or CONTINUE WITH EMAIL</p>
                 </div>
-                <a href="#" class="forgot">Forgot password?</a>
+                <div class="form-group">
+                    <label>Email</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="you@example.com" id="email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="••••••••" id="password">
+                    </div>
+                    <a href="#" class="forgot">Forgot password?</a>
+                </div>
+
+                <button class="submit-btn" onclick="handleSignIn()">Sign In</button>
+
+                <p class="switch-link">
+                    Don't have an account? <a href="#">Create one</a>
+                </p>
+
             </div>
-
-            <button class="submit-btn" onclick="handleSignIn()">Sign In</button>
-
-            <p class="switch-link">
-                Don't have an account? <a href="#">Create one</a>
-            </p>
-
         </div>
     </div>
     <footer>&copy; 2026 StackFind. All rights reserved.</footer>

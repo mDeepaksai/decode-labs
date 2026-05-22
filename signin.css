@@ -87,6 +87,18 @@ nav li a {
     padding: 40px 20px;
 }
 
+.main-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+    gap: 40px;
+}
+
+.main-left {
+    display: none;
+}
+
 .signin-container {
     width: 100%;
     max-width: 420px;
@@ -341,5 +353,29 @@ footer {
 
     .nav-menu a:hover {
         color: #A0D4E0;
+    }
+
+    .main-grid {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .main-left {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 16px;
+    }
+    .main-left h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #A5856E;
+        font-family: "Montserrat", sans-serif;
+    }
+    .main-left p {
+        font-size: 16px;
+        color: rgba(242, 240, 234, 0.5);
+        font-family: "Montserrat", sans-serif;
+        color: rgba(242, 240, 234, 0.5);
     }
 }
