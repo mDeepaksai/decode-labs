@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>New User</title>
+    <link rel="stylesheet" href="create.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="name">StackFind</a></li>
+            <li>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-menu" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="submit.html">Submit Tool</a>
+            <a href="signin.html">Sign In</a>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+        <div class="main-grid">
+
+            <div class="main-left">
+                <h2>StackFind</h2>
+                <p>Discover the best SaaS tools for your workflow</p>
+                <p>Find, compare and choose the right software for you</p>
+            </div>
+
+            <div class="auth-card">
+                <div id="form-view">
+                    <div class="auth-header" style="margin-bottom: 6px;">
+                        <h1>Create your account</h1>
+                        <p>Join StackFind and start discovering tools</p>
+                    </div>
+                    <div class="oauth-group" style="margin-top: 16px;">
+                        <button class="oauth-btn" onclick="oauthSignup('github')">
+                            <i class="fa-brands fa-github"></i>Sign up with GitHub
+                        </button>
+                        <button class="oauth-btn" onclick="oauthSignup('google')">
+                            <i class="fa-brands fa-google"></i>Sign up with Google
+                        </button>
+                    </div>
+                    <div class="divider" style="margin-top: 20px;">or sign up with email</div>
+                    <div class="form-row" style="margin-top: 18px;">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="first-name" placeholder="Jane">
+                            </div>
+                            <span class="field-error" id="err-first"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="last-name" placeholder="Doe">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 18px;">
+                        <label>Email</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email" placeholder="you@example.com"
+                                oninput="clearErr('err-email', this)">
+                        </div>
+                        <span class="field-error" id="err-email"></span>
+                    </div>
+                    <div class="form-group" style="margin-top: 18px;">
+                        <label>Password</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="password" placeholder="Min. 8 characters"
+                                oninput="updateStrength(this.value); clearErr('err-password', this)">
+                            <button class="toggle-pw" type="button" onclick="togglePw('password', this)">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="strength-bar">
+                            <div class="strength-segment" id="seg1"></div>
+                            <div class="strength-segment" id="seg2"></div>
+                            <div class="strength-segment" id="seg3"></div>
+                            <div class="strength-segment" id="seg4"></div>
+                        </div>
+                        <span class="strength-label" id="strength-label"></span>
+                        <span class="field-error" id="err-password"></span>
+                    </div>
+                    <div class="form-group" style="margin-top: 18px;">
+                        <label>Confirm Password</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="confirm-password" placeholder="Repeat your password"
+                                oninput="clearErr('err-confirm', this)">
+                            <button class="toggle-pw" type="button" onclick="togglePw('confirm-password', this)">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="field-error" id="err-confirm"></span>
+                    </div>
+                    <div class="terms-row" style="margin-top: 18px;">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <span class="field-error" id="err-terms" style="margin-top: 4px;"></span>
+                    <button class="submit-btn" id="submit-btn" style="margin-top: 22px;" onclick="handleRegister()">
+                        <i class="fa-solid fa-user-plus"></i>Create Account
+                    </button>
+                    <p class="switch-link" style="margin-top: 6px;">
+                        Already have an account? <a href="signin.html">Sign in</a>
+                    </p>
+                </div>
+
+                <div class="success-card" id="success-view">
+                    <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+                    <h2>You're in! 🎉</h2>
+                    <p>Your account has been created successfully.<br>Start exploring the best SaaS tools.</p>
+                    <a href="index.html">Browse Tools →</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>&copy; 2026 StackFind. All rights reserved.</footer>
+    <script src="create.js"></script>
+</body>
+</html>
