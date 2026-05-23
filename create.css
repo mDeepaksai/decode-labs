@@ -38,14 +38,14 @@ nav li a {
     text-shadow: 0 0 8px rgba(165, 133, 110, 0.4);
 }
 
-.hambuger {
+.hamburger {
     display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
 }
 
-.hambuger span {
+.hamburger span {
     display: block;
     width: 25px;
     height: 3px;
@@ -507,7 +507,7 @@ footer {
 
     .main-grid {
         flex-direction: row;
-        align-items: center;       
+        align-items: center;        
     }
 
     .main-left {
