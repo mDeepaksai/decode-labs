@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Submit Tool</title>
+    <link rel="stylesheet" href="submittool.css">
+</head>
+<body>
+   <nav>
+        <ul>
+            <li><a href="index.html" class="name">StackFind</a></li>
+            <li>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </li>
+        </ul>
+        <div class="nav-menu" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="submit.html">Submit Tool</a>
+            <a href="signin.html">Sign In</a>
+        </div>
+    </nav>
+ 
+    <div class="page-wrapper">
+        <div class="submit-card">
+ 
+            <div class="submit-header">
+                <h1>Submit a Tool</h1>
+                <p>Know a great SaaS tool the world should know about? Fill in the details and we'll review it within 48 hours.</p>
+            </div>
+ 
+            <div id="success-banner" class="success-banner">
+                <i class="fa-solid fa-circle-check"></i>
+                Tool submitted! We'll review it within 48 hours.
+            </div>
+ 
+            <div class="form-grid">
+ 
+                <p class="section-label">Basic Info</p>
+ 
+                <!-- Tool Name + URL -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tool Name <span class="required-star">*</span></label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-tag"></i>
+                            <input type="text" id="tool-name" placeholder="e.g. Notion">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Website URL <span class="required-star">*</span></label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-link"></i>
+                            <input type="url" id="tool-url" placeholder="https://example.com">
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- Logo -->
+                <div class="form-group">
+                    <label>Logo</label>
+                    <div class="logo-upload">
+                        <div class="logo-preview" id="logo-preview">
+                            <i class="fa-solid fa-image"></i>
+                        </div>
+                        <div>
+                            <button class="upload-btn" onclick="document.getElementById('logo-input').click()">
+                                <i class="fa-solid fa-upload"></i> Upload Logo
+                            </button>
+                            <input type="file" id="logo-input" accept="image/*" style="display:none" onchange="previewLogo(event)">
+                            <p class="upload-hint">PNG or SVG, min 64×64px</p>
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- Category -->
+                <div class="form-group">
+                    <label>Category <span class="required-star">*</span></label>
+                    <div class="input-wrap select-wrap">
+                        <i class="fa-solid fa-shapes"></i>
+                        <select id="tool-category">
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="ai">AI Tools</option>
+                            <option value="productivity">Productivity</option>
+                            <option value="devtools">Dev Tools</option>
+                            <option value="design">Design</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="sales">Sales</option>
+                            <option value="support">Support</option>
+                        </select>
+                    </div>
+                </div>
+ 
+                <!-- Tagline -->
+                <div class="form-group">
+                    <label>Tagline <span class="required-star">*</span></label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <input type="text" id="tool-tagline" placeholder="One short punchy line" maxlength="80">
+                    </div>
+                </div>
+ 
+                <!-- Description -->
+                <div class="form-group">
+                    <label>Description <span class="required-star">*</span></label>
+                    <div class="input-wrap textarea-wrap">
+                        <i class="fa-solid fa-align-left"></i>
+                        <textarea id="tool-desc" placeholder="What does this tool do? Who is it for?"></textarea>
+                    </div>
+                </div>
+ 
+                <p class="section-label">Pricing</p>
+ 
+                <div class="form-group">
+                    <label>Pricing Model <span class="required-star">*</span></label>
+                    <div class="chip-group" id="pricing-chips">
+                        <button class="chip" data-value="free">Free</button>
+                        <button class="chip" data-value="freemium">Freemium</button>
+                        <button class="chip" data-value="paid">Paid</button>
+                        <button class="chip" data-value="open-source">Open Source</button>
+                        <button class="chip" data-value="contact">Contact Sales</button>
+                    </div>
+                </div>
+ 
+                <p class="section-label">Your Details</p>
+ 
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="submitter-name" placeholder="John Doe">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Email <span class="required-star">*</span></label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="submitter-email" placeholder="you@example.com">
+                        </div>
+                    </div>
+                </div>
+ 
+            </div>
+ 
+            <button class="submit-btn" onclick="handleSubmit()">
+                <i class="fa-solid fa-paper-plane"></i>
+                Submit for Review
+            </button>
+ 
+        </div>
+    </div>
+ 
+    <footer>&copy; 2026 StackFind. All rights reserved.</footer>
+ 
+    <script src="submittool.js"></script>
+</body>
+</html>
